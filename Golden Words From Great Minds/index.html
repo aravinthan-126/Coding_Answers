@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Golden Words from Great Minds</title>
+  <meta name="description" content="Discover and share timeless wisdom from the greatest minds. Daily quotes, inspiration, and more." />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <style>
+    /* Hero Section Typed Animation (Only for Quote) */
+    .quote-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.quote-text {
+  display: inline-block;
+  overflow: hidden;
+  /* white-space: nowrap; ❌ Remove this line */
+  word-wrap: break-word; /* ✅ Helps break long words if needed */
+  text-align: center;
+  font-size: 1.5rem;
+
+}
+
+
+.quote-author {
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+    .quote-text {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typing 4s steps(30) 1s 1 normal both;
+    }
+
+    /* Category Card Hover Effects */
+    .category-card {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    .category-card.motivation:hover {
+      background-color: #fef3c7; /* light orange */
+    }
+    .category-card.wisdom:hover {
+      background-color: #e0e7ff; /* light blue */
+    }
+    .category-card.success:hover {
+      background-color: #d1fae5; /* light green */
+    }
+    .category-card.love:hover {
+      background-color: #ffe4e6; /* light pink */
+    }
+    .category-card.life:hover {
+      background-color: #fef3e7; /* light brown */
+    }
+    .category-card.faith:hover {
+      background-color: #dbeafe; /* light sky blue */
+    }
+
+    .category-card:hover i {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="branding">
+        <a href="index.html" class="logo-link" style="margin-top: 15px;">
+          <img src="logo.png" alt="Golden Words Logo" class="logo" />
+        </a>
+        <div class="header-text">
+          <h1>Golden Words from Great Minds</h1>
+          <p class="tagline">Inspiration for every day, from the minds that moved the world</p>
+        </div>
+      </div>
+      <nav class="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="quotes.html">Quotes</a>
+        <a href="add-quote.html">Add Quote</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section with Quote of the Day -->
+    <section id="hero" class="hero">
+      <h2>Golden Words from Great Minds</h2>
+      <div class="quote-box">
+        <p class="quote-text"><span id="daily-quote"></span></p>
+        <p class="quote-author" id="quote-author">—</p>
+      </div>
+            <div class="hero-buttons">
+        <a href="quotes.html" class="btn discover">Discover Quotes</a>
+        <a href="add-quote.html" class="btn share">Share Your Own</a>
+      </div>
+      <div class="scroll-down"href="categories">&#8595;</div>
+    </section>
+
+    <!-- Explore Categories Section -->
+    <section id="categories" class="categories">
+      <h2>Explore Categories</h2>
+      <p class="subtitle">Discover golden words organized by themes that matter to you. Find inspiration for every aspect of life.</p>
+      <div class="category-grid">
+        <div class="category-card motivation"><i class="fa-regular fa-star" style="color: #f59e0b; font-size: 30px; margin-top: 10px;"></i><h3>Motivation</h3><p>Explore motivation quotes from great minds</p></div>
+        <div class="category-card wisdom"><i class="fa-regular fa-brain" style="color: #4f46e5; font-size: 30px; margin-top: 10px;"></i><h3>Wisdom</h3><p>Explore wisdom quotes from great minds</p></div>
+        <div class="category-card success"><i class="fa-light fa-medal" style="color: #059669; font-size: 30px; margin-top: 10px;"></i><h3>Success</h3><p>Explore success quotes from great minds</p></div>
+        <div class="category-card love"><i class="fa-regular fa-heart" style="color: #f43f5e; font-size: 30px; margin-top: 10px;"></i><h3>Love</h3><p>Explore love quotes from great minds</p></div>
+        <div class="category-card life"><i class="fa-light fa-mug-hot" style="color: #92400e; font-size: 30px; margin-top: 10px;"></i><h3>Life</h3><p>Explore life quotes from great minds</p></div>
+        <div class="category-card faith"><i class="fa-light fa-book-bookmark" style="color: #2563eb; font-size: 30px; margin-top: 10px;"></i><h3>Faith</h3><p>Explore faith quotes from great minds</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 <strong>Golden Words from Great Minds</strong>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Quote of the Day with Typed.js -->
+  <script>
+    const quotes = [
+      { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+      { text: "Success usually comes to those who are too busy to be looking for it.", author: "Henry David Thoreau" },
+      { text: "Don’t watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+      { text: "The harder you work for something, the greater you’ll feel when you achieve it.", author: "Anonymous" },
+      { text: "Dream big and dare to fail.", author: "Norman Vaughan" }
+    ];
+  
+    let index = 0;
+    let typed = null;
+  
+    function showTypedQuote() {
+      const quote = quotes[index % quotes.length];
+      document.getElementById("quote-author").textContent = `— ${quote.author}`;
+  
+      if (typed) {
+        typed.destroy(); // destroy previous instance before creating new
+      }
+  
+      typed = new Typed("#daily-quote", {
+        strings: [quote.text],
+        typeSpeed: 50,
+        backSpeed: 25,
+        backDelay: 2000,
+        startDelay: 300,
+        loop: false,
+        showCursor: true,
+        onComplete: () => {
+          index++;
+          setTimeout(showTypedQuote, 2500); // wait before showing next quote
+        }
+      });
+    }
+  
+    window.onload = showTypedQuote;
+  </script>
+    </body>
+</html>
